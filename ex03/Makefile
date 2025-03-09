@@ -6,11 +6,11 @@
 #    By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 04:53:36 by aaghzal           #+#    #+#              #
-#    Updated: 2025/03/09 21:51:23 by aaghzal          ###   ########.fr        #
+#    Updated: 2025/03/09 23:39:08 by aaghzal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = materia
+NAME = a.out
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98

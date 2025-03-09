@@ -32,11 +32,10 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& org)
 {
     for (int i = 0; i < 4; i++)
     {
+        delete inventory[i];
+        inventory[i] = NULL;
         if (org.inventory[i])
-        {
-            delete inventory[i];
             inventory[i] = org.inventory[i]->clone();
-        }
     }
     return (*this);
 }
