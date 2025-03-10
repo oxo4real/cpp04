@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:05:48 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 04:01:16 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 05:10:33 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,5 @@ void AMateria::vacume_ground(void)
         delete tmp->item;
         delete tmp;
     }
+    ground = NULL;
 }
