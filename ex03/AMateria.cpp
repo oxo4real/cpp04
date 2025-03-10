@@ -6,13 +6,15 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:05:48 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 02:53:26 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 04:01:16 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 #include <iostream>
+
+t_list* AMateria::ground = NULL;
 
 AMateria::AMateria(std::string const & type) : type(type)
 {
@@ -55,4 +57,26 @@ void AMateria::use(ICharacter& target)
               << target.getName()
               << " *"
               << std::endl;
+}
+
+void AMateria::throw_on_ground(AMateria* item)
+{
+    t_list* node = new t_list;
+    node->item = item;
+    node->next = ground;
+    ground = node;
+}
+
+void AMateria::vacume_ground(void)
+{
+    t_list* head = ground;
+    t_list* tmp;
+
+    while (head)
+    {
+        tmp = head;
+        head = head->next;
+        delete tmp->item;
+        delete tmp;
+    }
 }

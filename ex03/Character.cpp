@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:47:28 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 02:54:42 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 05:02:57 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Character::Character(void) : name("Unknown")
         inventory[i] = NULL;
 }
 
-Character::Character(const std::string name) : name(name)
+Character::Character(const std::string& name) : name(name)
 {
     std::cout << "Character named constructor called"
               << std::endl;
@@ -77,12 +77,16 @@ void Character::equip(AMateria* m)
             return ;
         }
     }
+    AMateria::throw_on_ground(m);
 }
 
 void Character::unequip(int idx)
 {
-    if (idx >= 0 && idx <= 3)
+    if (idx >= 0 && idx <= 3 && inventory[idx])
+    {
+        AMateria::throw_on_ground(inventory[idx]);
         inventory[idx] = NULL;
+    }
 }
 
 void Character::use(int idx, ICharacter& target)

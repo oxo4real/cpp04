@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:39:15 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/09 21:40:13 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 04:59:39 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Character : public ICharacter
         AMateria* inventory[4];
     public:
         Character(void);
-        Character(const std::string name);
+        Character(const std::string& name);
         Character(const Character& org);
         Character& operator=(const Character& org);
         ~Character();
