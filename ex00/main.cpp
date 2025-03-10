@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:04:11 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/09 18:04:12 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 03:07:14 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,18 @@ int main()
     j->makeSound();
     meta->makeSound();
 
+    delete meta;
+    delete j;
+    delete i;
+
     std::cout << "-----------------------------" << std::endl;
 
     const WrongAnimal* k = new WrongCat();
 
     std::cout << k->getType() << " " << std::endl;
     k->makeSound();
+
+    delete k;
 
     return 0;
 }
