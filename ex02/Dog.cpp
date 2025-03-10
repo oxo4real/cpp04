@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 18:05:24 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 02:40:23 by aaghzal          ###   ########.fr       */
+/*   Created: 2025/03/09 18:04:43 by aaghzal           #+#    #+#             */
+/*   Updated: 2025/03/10 17:07:46 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::Dog(const Dog& org) : Animal(org)
               << std::endl;
     brain = new Brain();
     for (int i = 0; i < 100; i++)
-        brain->ideas[i] = org.brain->ideas[i];
+        brain->setidea(i, org.brain->getidea(i));
 }
 
 Dog& Dog::operator=(const Dog& org)
@@ -35,7 +35,7 @@ Dog& Dog::operator=(const Dog& org)
     type = org.type;
     brain = new Brain();
     for (int i = 0; i < 100; i++)
-        brain->ideas[i] = org.brain->ideas[i];
+        brain->setidea(i, org.brain->getidea(i));
     return (*this);
 }
 
@@ -54,10 +54,10 @@ void Dog::makeSound(void) const
 
 std::string Dog::getidea(int idx) const
 {
-    return (brain->ideas[idx % 100]);
+    return (brain->getidea(idx));
 }
 
 void Dog::setidea(int idx, std::string idea)
 {
-    brain->ideas[idx % 100] = idea;
+    brain->setidea(idx, idea);
 }
