@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 21:33:08 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 05:03:18 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 05:05:58 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int main()
     tmp = src->createMateria("cure");
     me->equip(tmp);
     tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
