@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:04:38 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 02:40:23 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 17:03:32 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Cat::Cat(const Cat& org) : Animal(org)
               << std::endl;
     brain = new Brain();
     for (int i = 0; i < 100; i++)
-        brain->ideas[i] = org.brain->ideas[i];
+        brain->setidea(i, org.brain->getidea(i));
 }
 
 Cat& Cat::operator=(const Cat& org)
@@ -35,7 +35,7 @@ Cat& Cat::operator=(const Cat& org)
     type = org.type;
     brain = new Brain();
     for (int i = 0; i < 100; i++)
-        brain->ideas[i] = org.brain->ideas[i];
+        brain->setidea(i, org.brain->getidea(i));
     return (*this);
 }
 
@@ -54,10 +54,13 @@ void Cat::makeSound(void) const
 
 std::string Cat::getidea(int idx) const
 {
-    return (brain->ideas[idx % 100]);
+    if (idx < 100 && idx >= 0)
+        return (brain->getidea(idx));
+    return (NULL);
 }
 
 void Cat::setidea(int idx, std::string idea)
 {
-    brain->ideas[idx % 100] = idea;
+    if (idx < 100 && idx >= 0)
+        brain->setidea(idx, idea);
 }
