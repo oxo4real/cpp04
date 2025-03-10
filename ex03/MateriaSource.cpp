@@ -12,15 +12,20 @@
 
 #include "MateriaSource.hpp"
 #include "AMateria.hpp"
+#include <iostream>
 
 MateriaSource::MateriaSource(void)
 {
+    std::cout << "MateriaSource default constructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
         inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& org)
 {
+    std::cout << "MateriaSource copy constructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (org.inventory[i])
@@ -42,6 +47,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& org)
 
 MateriaSource::~MateriaSource(void)
 {
+    std::cout << "MateriaSource destructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
         delete inventory[i];
 };

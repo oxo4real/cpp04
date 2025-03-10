@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:05:53 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/09 18:05:54 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 03:00:22 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,23 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-Ice::Ice(void) : AMateria("ice") {}
+Ice::Ice(void) : AMateria("ice")
+{
+    std::cout << "Ice default constructor called"
+              << std::endl;
+}
 
-Ice::Ice(const Ice& org) : AMateria(org) {}
+Ice::Ice(const Ice& org) : AMateria(org)
+{
+    std::cout << "Ice copy constructor called"
+              << std::endl;
+}
 
-Ice::~Ice() {}
+Ice::~Ice()
+{
+    std::cout << "Ice destructor called"
+              << std::endl;
+}
 
 Ice& Ice::operator=(const Ice& org)
 {

@@ -6,16 +6,24 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:03:55 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/09 18:03:57 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 02:41:40 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "iostream"
+#include <iostream>
 
-Animal::Animal() : type("Unknown") {}
+Animal::Animal() : type("Unknown")
+{
+    std::cout << "Animal default constructor called"
+              << std::endl;
+}
 
-Animal::Animal(const Animal& org) : type(org.type) {}
+Animal::Animal(const Animal& org) : type(org.type)
+{
+    std::cout << "Animal copy constructor called"
+              << std::endl;
+}
 
 Animal& Animal::operator=(const Animal& org)
 {
@@ -23,7 +31,11 @@ Animal& Animal::operator=(const Animal& org)
     return (*this);
 }
 
-Animal::~Animal(void) {}
+Animal::~Animal(void)
+{
+    std::cout << "Animal destructor called"
+              << std::endl;
+}
 
 void Animal::makeSound(void) const
 {

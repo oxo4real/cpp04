@@ -6,27 +6,34 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:47:28 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/09 23:57:04 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/10 02:54:42 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "AMateria.hpp"
+#include <iostream>
 
 Character::Character(void) : name("Unknown")
 {
+    std::cout << "Character default constructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
         inventory[i] = NULL;
 }
 
 Character::Character(const std::string name) : name(name)
 {
+    std::cout << "Character named constructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
         inventory[i] = NULL;
 }
 
 Character::Character(const Character& org) : name(org.name)
 {
+    std::cout << "Character copy constructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (org.inventory[i])
@@ -49,6 +56,8 @@ Character& Character::operator=(const Character& org)
 
 Character::~Character(void)
 {
+    std::cout << "Character destructor called"
+              << std::endl;
     for (int i = 0; i < 4; i++)
         delete inventory[i];
 };

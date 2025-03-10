@@ -15,11 +15,23 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-Cure::Cure(void) : AMateria("cure") {}
+Cure::Cure(void) : AMateria("cure")
+{
+    std::cout << "Cure default constructor called"
+              << std::endl;
+}
 
-Cure::Cure(const Cure& org) : AMateria(org) {}
+Cure::Cure(const Cure& org) : AMateria(org)
+{
+    std::cout << "Cure copy constructor called"
+              << std::endl;
+}
 
-Cure::~Cure() {}
+Cure::~Cure()
+{
+    std::cout << "Cure destructor called"
+              << std::endl;
+}
 
 Cure& Cure::operator=(const Cure& org)
 {
