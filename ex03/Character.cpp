@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:47:28 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 05:02:57 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/12 05:21:05 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+    for (int i = 0; i < 4; i++)
+    {
+        if (inventory[i] == m)
+            return ;
+    }
     for (int i = 0; i < 4; i++)
     {
         if (inventory[i] == NULL)

@@ -57,6 +57,11 @@ void MateriaSource::learnMateria(AMateria* m)
 {
     for (int i = 0; i < 4; i++)
     {
+        if (inventory[i] == m)
+            return ;
+    }
+    for (int i = 0; i < 4; i++)
+    {
         if (inventory[i] == NULL)
         {
             inventory[i] = m;

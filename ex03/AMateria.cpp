@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:05:48 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/03/10 05:10:33 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/03/12 05:22:07 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,13 @@ void AMateria::use(ICharacter& target)
 
 void AMateria::throw_on_ground(AMateria* item)
 {
+    t_list* head = ground;
+    while (head)
+    {
+        if (head->item == item)
+            return ;
+        head = head->next;
+    }
     t_list* node = new t_list;
     node->item = item;
     node->next = ground;
